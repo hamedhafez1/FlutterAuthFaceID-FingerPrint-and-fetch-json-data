@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:local_auth/local_auth.dart';
+import 'detail_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -80,6 +81,8 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       if (isAuthorized) {
         _authorizedOrNot = "Authorized";
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => UserPage()));
       } else {
         _authorizedOrNot = "Not Authorized";
       }
